@@ -32,7 +32,6 @@ public class CompletableFutureTest03 {
         List<Double> prices = completableFutures.stream().map(CompletableFuture::join).collect(Collectors.toList());
         System.out.println(prices);
 
-
         long end = System.currentTimeMillis();
         executor.shutdown();
         System.out.printf("Time passed to searcPricesSync %dms%n", (end-start));
