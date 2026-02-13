@@ -23,11 +23,19 @@ public class Person {
                 '}';
     }
 
-    public static class PersonBuilder {
+
+    public static final class PersonBuilder {
         private String firstName;
         private String lastName;
         private String username;
         private String email;
+
+        private PersonBuilder() {
+        }
+
+        public static PersonBuilder builder() {
+            return new PersonBuilder();
+        }
 
         public PersonBuilder firstName(String firstName) {
             this.firstName = firstName;
